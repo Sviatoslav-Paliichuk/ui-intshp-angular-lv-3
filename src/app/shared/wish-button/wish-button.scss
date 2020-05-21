@@ -1,0 +1,36 @@
+@import '../../styles//variables';
+
+.wish {
+  &__btn {
+    background: inherit;
+  }
+
+  &__product {
+    &-item {
+      font-size: 1.8rem;
+      color: $fontColorLight;
+    }
+
+    &-details {
+      opacity: 0.5;
+      font-size: 1.6rem;
+      color: $fontColorDark;
+    }
+
+    &-view-scaled {
+      color: $fontColorLight;
+      font-size: 2.5rem;
+
+      @media screen and (max-width: 768px) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  &-icon{
+    &_active {
+      opacity: 1;
+      color: $wishHeartColor;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<nav class="scroll">
+    <ul class="col-12" *ngIf="activeAnchor$ | async as activeElement">
+      <li
+        *ngFor="let bullet of anchors$ | async; let i = index"
+        class="menu"
+        [ngSwitch]="bullet.title"
+        (click)="onItemSelect(bullet)">
+        <fa-icon
+          *ngSwitchCase="'app-header'"
+          class="icon"
+          [icon]="toHeaderIcon"
+          [class.disabled]="bullet === activeElement">
+        </fa-icon>
+        <fa-icon
+          *ngSwitchCase="'app-footer'"
+          class="icon"
+          [class.disabled]="bullet === activeElement"
+          [icon]="toFooterIcon">
+        </fa-icon>
+        <span *ngSwitchDefault class="item"
+          [class.active]="bullet === activeElement">
+          <span class="item__text">{{ bullet.title }}</span>
+        </span>
+      </li>
+    </ul>
+</nav>

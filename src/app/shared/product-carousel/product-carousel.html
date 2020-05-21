@@ -1,0 +1,22 @@
+<div class="carousel__wrapper content__container">
+  <div class="carousel">
+    <button class="prev" [disabled]="!canMoveToPrev" #prevButton>
+      <fa-icon class="arrow-icon" [icon]="faArrowLeft"></fa-icon>
+    </button>
+    <div class="products__container" #productsContainer>
+      <div class="products" #products>
+        <app-product-item *ngFor="let product of productData"
+          [imgUrl]="product.imgUrl"
+          [imgUrlNext]="product.imgUrlNext"
+          [status]="product.status"
+          [productTitle]="product.productTitle"
+          [productPrice]="product.productPrice"
+          [productId]="product.productId">
+        </app-product-item>
+      </div>
+    </div>
+    <button class="next" [disabled]="!canMoveToNext" #nextButton>
+      <fa-icon class="arrow-icon" [icon]="faArrowRight" ></fa-icon>
+    </button>
+  </div>
+</div>
